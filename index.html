@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Radmir Redux RP | Официальный сайт</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <!-- Шапка сайта -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <i class="fas fa-gamepad"></i>
+                <h1>RADMIR <span class="redux">REDUX</span> <span class="rp">RP</span></h1>
+            </div>
+
+            <nav class="main-nav" id="mainNav">
+                <ul>
+                    <li><a href="#" class="nav-link active" data-section="home"><i class="fas fa-home"></i> Главная</a>
+                    </li>
+                    <li><a href="#" class="nav-link" data-section="rules"><i class="fas fa-book"></i> Правила</a></li>
+                    <li><a href="#" class="nav-link" data-section="staff"><i class="fas fa-user-tie"></i>
+                            Администрация</a></li>
+                    <li><a href="#" class="nav-link" data-section="donate"><i class="fas fa-gem"></i> Донат</a></li>
+                    <li><a href="#" class="nav-link" data-section="contacts"><i class="fas fa-phone"></i> Контакты</a>
+                    </li>
+                </ul>
+            </nav>
+
+            <div class="header-controls">
+                <button class="btn btn-login" id="loginBtn">
+                    <i class="fas fa-sign-in-alt"></i> Войти
+                </button>
+                <button class="menu-toggle" id="menuToggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Контентные секции -->
+    <main class="main-content">
+        <!-- Секция Главная -->
+        <section id="homeSection" class="content-section active">
+            <div class="container">
+                <div class="hero">
+                    <h2>Добро пожаловать на Redux RP</h2>
+                    <p>Лучшая ролевая копия в стиле Radmir</p>
+                    <div class="stats">
+                        <div class="stat-card">
+                            <i class="fas fa-users"></i>
+                            <h3 id="onlineCount"></h3>
+                            <p>Средний онлайн</p>
+                        </div>
+                        <div class="stat-card">
+                            <i class="fas fa-server"></i>
+                            <h3>Лучший</h3>
+                            <p>Серверов</p>
+                        </div>
+                        <div class="stat-card">
+                            <i class="fas fa-clock"></i>
+                            <h3>24/7</h3>
+                            <p>Работа</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="server-ip">
+                    <h3>Подключиться к серверу:</h3>
+                    <div class="ip-box">
+                        <code id="serverIp"></code>
+                        <button class="btn-copy" id="copyIpBtn">
+                            <i class="far fa-copy"></i> Скачать
+                        </button>
+                    </div>
+                </div>
+
+                <div class="factions">
+                    <h3><i class="fas fa-flag"></i> Фракции сервера</h3>
+                    <div class="factions-filter">
+                        <div class="filter-group">
+                            <label for="searchFaction">
+                                <i class="fas fa-search"></i> Поиск фракции:
+                            </label>
+                            <input type="text" id="searchFaction" class="searchSection"
+                                placeholder="Введите название...">
+                        </div>
+                        <div class="filter-group">
+                            <label for="minMembers">
+                                <i class="fas fa-users"></i> Минимум участников:
+                            </label>
+                            <input type="range" id="minMembers" min="0" max="100" value="0">
+                            <span id="membersValue">0</span>
+                        </div>
+                        <div class="filter-group">
+                            <label for="showWithLeader">
+                                <input type="checkbox" id="showWithLeader">
+                                <i class="fas fa-crown"></i> Только с лидером
+                            </label>
+                        </div>
+                        <div class="filter-group">
+                            <button id="resetFilters" class="btn-filter">
+                                <i class="fas fa-redo"></i> Сбросить фильтры
+                            </button>
+                        </div>
+                    </div>
+                    <div class="factions-list" id="factionsList">
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Секция Правила -->
+        <section id="rulesSection" class="content-section">
+            <div class="container">
+                <h2><i class="fas fa-gavel"></i> Правила сервера</h2>
+                <div class="rules-container">
+                    <div class="rule-category">
+                        <h3 class="rule-title" data-rule="basic">
+                            <i class="fas fa-file-alt"></i> NRP
+                            <i class="fas fa-chevron-down"></i>
+                        </h3>
+                        <div class="rule-content" id="basicRules">
+                            <p>1.NRP(NonRp- поведение, которое идёт в разрез RolePlay логики). | <span
+                                    class="punishment">Деморган 30-120 минут</span>
+                            </p>
+                            <p>2.Проникновение на вч путём перелаза через колючую проволоку. | <span
+                                    class="punishment"></span> Деморган 15-30 минут </p>
+                            <p>3.Бег по оживленной дороге/АФК на дороге | <span class="punishment"> От кика до деморгана
+                                    10 минут</span></p>
+                            <p>4.Использование средств самолечения во время бояю | <span class="punishment"> WARN</span>
+                            </p>
+                            <p>5.Убийство игроков, находящихся в бессознательном состоянии, с целью обхода системы
+                                ареста. | <span class="punishment">От деморгана 10 минут до WARN</span> </p>
+                        </div>
+                    </div>
+
+                    <div class="rule-category">
+                        <h3 class="rule-title" data-rule="chat">
+                            <i class="fas fa-comments"></i> Правила чата
+                            <i class="fas fa-chevron-down"></i>
+                        </h3>
+                        <div class="rule-content" id="chatRules">
+                            <p>1. Запрещен флуд и спам.</p>
+                            <p>2. Не оскорбляйте других игроков.</p>
+                            <p>3. Английский язык только в /en.</p>
+                        </div>
+                    </div>
+
+                    <div class="rule-category">
+                        <h3 class="rule-title" data-rule="trade">
+                            <i class="fas fa-handshake"></i> Торговые правила
+                            <i class="fas fa-chevron-down"></i>
+                        </h3>
+                        <div class="rule-content" id="tradeRules">
+                            <p>1. Честная торговля между игроками.</p>
+                            <p>2. Запрещен обмен реальных денег на игровые.</p>
+                            <p>3. Все сделки на свой страх и риск.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Секция Администрация -->
+        <section id="staffSection" class="content-section">
+            <div class="container">
+                <h2><i class="fas fa-user-shield"></i> Команда администрации</h2>
+                <div class="staff-container" id="staffContainer">
+                    <!-- Администрация будет добавлена через JS -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Секция Донат -->
+        <section id="donateSection" class="content-section">
+            <div class="container">
+                <h2><i class="fas fa-crown"></i> Привилегии и донат</h2>
+                <div class="donate-packages" id="donatePackages">
+                    <!-- Пакеты доната будут добавлены через JS -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Секция Контакты -->
+        <section id="contactsSection" class="content-section">
+            <div class="container">
+                <h2><i class="fas fa-headset"></i> Связь с нами</h2>
+                <div class="contacts-grid">
+                    <div class="contact-card">
+                        <i class="fab fa-discord"></i>
+                        <h3>Discord</h3>
+                        <p id="discordLink">discord.gg/radmir-redux</p>
+                        <button class="btn-connect" data-type="discord">Перейти</button>
+                    </div>
+                    <div class="contact-card">
+                        <i class="fab fa-vk"></i>
+                        <h3>ВКонтакте</h3>
+                        <p id="vkLink">vk.com/radmir_redux</p>
+                        <button class="btn-connect" data-type="vk">Перейти</button>
+                    </div>
+                    <div class="contact-card">
+                        <i class="fas fa-envelope"></i>
+                        <h3>Почта</h3>
+                        <p id="emailContact">support@radmir-redux.com</p>
+                        <button class="btn-connect" data-type="email">Написать</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Футер -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h3>REDUX RP</h3>
+                    <p>© 2026 Все права защищены</p>
+                </div>
+                <div class="footer-links">
+                    <a href="#">Политика конфиденциальности</a>
+                    <a href="#">Пользовательское соглашение</a>
+                    <a target="_blank"
+                        href="https://docs.google.com/document/d/1AUW82r3U4LTPZUZFgkIp2HdCT4sz9OhlALRerkuZwdU/edit?usp=sharing">Правила
+                        сервера</a>
+                </div>
+                <div class="footer-stats">
+                    <p>Онлайн: <span id="footerOnline"></span></p>
+                    <p>Версия: <span id="serverVersion">Redux v8.0</span></p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Модальное окно входа -->
+    <div class="modal" id="loginModal">
+        <div class="modal-content">
+            <span class="modal-close" id="modalClose">&times;</span>
+            <h3><i class="fas fa-sign-in-alt"></i> Вход в аккаунт</h3>
+            <div class="login-form">
+                <input type="text" id="loginUsername" placeholder="Имя пользователя">
+                <input type="password" id="loginPassword" placeholder="Пароль">
+                <button class="btn btn-submit" id="submitLogin">Войти</button>
+                <p class="form-note">* Это демо-версия сайта. Реальный вход не работает.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Уведомление -->
+    <div class="notification" id="notification">
+        <span id="notificationText">Текст уведомления</span>
+    </div>
+
+    <script src="skript.js"></script>
+</body>
+
+</html>
